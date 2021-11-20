@@ -1,16 +1,21 @@
 # wikipedia_client
 
-A new Flutter project.
+Wikipedia client to pull in featured articles.
 
-## Getting Started
+## TODO
 
-This project is a starting point for a Flutter application.
+### Wikipedia Flutter Client
 
-A few resources to get you started if this is your first Flutter project:
+A mobile app, written using Flutter, to showcase the featured Wikipedia articles.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+API is available at: https://en.wikipedia.org/w/api.php?action=featuredfeed&format=json&feed=featured
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Functional requirements:
+
+1. There should be a screen to showcase featured articles.
+2. The article should show a small description of a few lines.
+3. The articles should be sorted, with latest appearing first.
+4. Clicking on the article should open a new screen which shows
+   4.1 Article title
+   4.2 Full description
+   4.3 A button/link to open it in browser
