@@ -4,7 +4,7 @@ import '../models/article.dart';
 class FetchArticles {
   static getArticles() async {
     final articlesData = await ApiProvider().get();
-    ArticleModel.articles = List.from(articlesData)
+    ArticleModel.articles = List.from(articlesData.reversed)
         .map<Article>((item) => Article.fromMap(item))
         .toList();
   }
