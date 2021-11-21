@@ -18,7 +18,7 @@ class ArticleDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Object? args = ModalRoute.of(context)!.settings.arguments;
     Article article = args as Article;
-    print(article);
+    // print(article);
     dom.Document htmlDocument = htmlparser.parse(article.description);
 
     return Scaffold(
@@ -50,7 +50,13 @@ class ArticleDetailPage extends StatelessWidget {
                           fontSize: 30,
                         ),
                       ),
-                      HtmlWidget(article.description),
+                      HtmlWidget(
+                        article.description,
+                        onTapUrl: (url) {
+                          print(url);
+                          return true;
+                        },
+                      ),
                     ],
                   ),
                 ),
