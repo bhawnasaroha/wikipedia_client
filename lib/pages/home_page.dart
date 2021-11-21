@@ -27,28 +27,31 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: MyTheme.creamColor,
-      body: SafeArea(
-        child: Container(
-          padding: EdgeInsets.all(32),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              ArticleListingHeader(),
-              SizedBox(height: 20),
-              if (ArticleModel.articles != null &&
-                  ArticleModel.articles!.isNotEmpty)
-                Expanded(
-                  child: ArticleListing(),
-                )
-              else
-                Expanded(
-                  child: Center(
-                    child: CircularProgressIndicator(),
+    return WillPopScope(
+      onWillPop: () async => false,
+      child: Scaffold(
+        backgroundColor: MyTheme.creamColor,
+        body: SafeArea(
+          child: Container(
+            padding: EdgeInsets.all(32),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                ArticleListingHeader(),
+                SizedBox(height: 20),
+                if (ArticleModel.articles != null &&
+                    ArticleModel.articles!.isNotEmpty)
+                  Expanded(
+                    child: ArticleListing(),
+                  )
+                else
+                  Expanded(
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
                   ),
-                ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

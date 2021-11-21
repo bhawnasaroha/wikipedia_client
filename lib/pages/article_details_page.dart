@@ -23,6 +23,25 @@ class ArticleDetailPage extends StatelessWidget {
 
     String articleDescription = UtilFunctions.fixImageUrl(article.description);
 
+    int indexOfFull = articleDescription.indexOf('Full');
+    print(indexOfFull);
+    String fullArticleUrl = article.link;
+    if (indexOfFull > 0) {
+      String descriptionFullUrlSearchSet =
+          articleDescription.substring(0, indexOfFull);
+      int indexOfHref = descriptionFullUrlSearchSet.lastIndexOf('href');
+      String fullArticleUrlSearchSet = descriptionFullUrlSearchSet.substring(
+          indexOfHref, descriptionFullUrlSearchSet.length);
+      fullArticleUrl = "https://en.wikipedia.org" +
+          fullArticleUrlSearchSet.substring(
+            fullArticleUrlSearchSet.indexOf('"') + 1,
+            fullArticleUrlSearchSet.indexOf(
+              '"',
+              fullArticleUrlSearchSet.indexOf('"') + 1,
+            ),
+          );
+    }
+    print(fullArticleUrl);
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
       body: SafeArea(
@@ -55,9 +74,9 @@ class ArticleDetailPage extends StatelessWidget {
                       SizedBox(height: 20),
                       ElevatedButton(
                         onPressed: () async {
-                          await launchURL(article.link);
+                          await launchURL(fullArticleUrl);
                         },
-                        child: Text("Full Article"),
+                        child: Text("Full article"),
                         style: ButtonStyle(
                           shape: MaterialStateProperty.all(StadiumBorder()),
                         ),

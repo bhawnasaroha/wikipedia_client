@@ -43,10 +43,11 @@ class ArticleItem extends StatelessWidget {
                 Text(
                   article.title,
                   style: TextStyle(
-                    fontSize: 18, fontWeight: FontWeight.bold,
-                    // color: MyTheme.darkBluish,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
+                SizedBox(height: 10),
                 // Html.fromDom(document: htmlDocument),
                 // Html(data: article.description),
                 // HtmlWidget(article.description),
@@ -72,7 +73,12 @@ class ArticleItem extends StatelessWidget {
                           arguments: article,
                         );
                       },
-                      child: Text("Read"),
+                      child: Text(
+                        "Read more",
+                        style: TextStyle(
+                          fontSize: 14,
+                        ),
+                      ),
                       style: ButtonStyle(
                         // backgroundColor: MaterialStateProperty.all(
                         //   MyTheme.darkBluish,
