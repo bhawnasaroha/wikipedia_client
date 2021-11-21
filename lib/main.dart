@@ -6,7 +6,7 @@ import 'utils/routes.dart';
 import 'widgets/themes.dart';
 
 void main() {
-  runApp(WikipediaClient());
+  runApp(const WikipediaClient());
 }
 
 class WikipediaClient extends StatelessWidget {
@@ -22,7 +22,8 @@ class WikipediaClient extends StatelessWidget {
       routes: {
         "/": (BuildContext context) => const HomePage(),
         MyRoutes.homeRoute: (BuildContext context) => const HomePage(),
-        MyRoutes.articleDetail: (BuildContext context) => ArticleDetailPage(),
+        MyRoutes.articleDetail: (BuildContext context) =>
+            const ArticleDetailPage(),
       },
     );
   }

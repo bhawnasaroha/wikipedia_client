@@ -28,10 +28,10 @@ class ArticleDetailPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.only(left: 8),
+                margin: const EdgeInsets.only(top: 10),
+                padding: const EdgeInsets.only(left: 8),
                 child: IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.arrow_back_ios_new,
                     size: 20,
                   ),
@@ -41,32 +41,32 @@ class ArticleDetailPage extends StatelessWidget {
                 ),
               ),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 32),
+                padding: const EdgeInsets.symmetric(horizontal: 32),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                         article.title,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 30,
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       AppButtons.primaryButton(
                         buttonText: "Full article",
                         onPressed: () async {
                           await launchURL(fullArticleUrl);
                         },
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       HtmlWidget(
                         articleDescription,
                         onTapUrl: (url) async {
                           await launchURL(article.link);
                           return true;
                         },
-                        textStyle: TextStyle(fontSize: 18),
+                        textStyle: const TextStyle(fontSize: 18),
                       ),
                     ],
                   ),

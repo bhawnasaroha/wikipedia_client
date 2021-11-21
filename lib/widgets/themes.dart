@@ -9,7 +9,7 @@ class MyTheme {
         ),
         primaryColor: primaryColor,
         fontFamily: GoogleFonts.poppins().fontFamily,
-        appBarTheme: AppBarTheme(
+        appBarTheme: const AppBarTheme(
           color: Colors.white,
           elevation: 0,
           iconTheme: IconThemeData(
@@ -22,7 +22,6 @@ class MyTheme {
       );
 
   // Colors
-  static Color primaryColor = Color(0xFF6B62FF);
-  static Color creamColor = Color(0xFFf5f5f5);
-  // static Color darkBluish = Color(0xFF403b58);
+  static Color primaryColor = const Color(0xFF6B62FF);
+  static Color creamColor = const Color(0xFFf5f5f5);
 }

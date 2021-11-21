@@ -7,13 +7,13 @@ class AppButtons {
       onPressed: () => onPressed(),
       child: Text(
         buttonText,
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 14,
         ),
       ),
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
-          StadiumBorder(),
+          const StadiumBorder(),
         ),
       ),
     );

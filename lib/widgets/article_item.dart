@@ -21,9 +21,9 @@ class ArticleItem extends StatelessWidget {
     articleDescription = UtilFunctions.fixImageUrl(articleDescription);
 
     return Container(
-      padding: EdgeInsets.all(16),
-      margin: EdgeInsets.only(bottom: 20),
-      decoration: BoxDecoration(
+      padding: const EdgeInsets.all(16),
+      margin: const EdgeInsets.only(bottom: 20),
+      decoration: const BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(12)),
       ),
@@ -36,21 +36,21 @@ class ArticleItem extends StatelessWidget {
               children: [
                 Text(
                   article.title,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 HtmlWidget(
                   articleDescription,
                   onTapUrl: (url) async {
                     await launchURL(article.link);
                     return true;
                   },
-                  textStyle: TextStyle(fontSize: 18),
+                  textStyle: const TextStyle(fontSize: 18),
                 ),
-                SizedBox(height: 10),
+                const SizedBox(height: 10),
                 ButtonBar(
                   alignment: MainAxisAlignment.spaceBetween,
                   buttonPadding: EdgeInsets.zero,

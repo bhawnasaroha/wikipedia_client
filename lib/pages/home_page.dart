@@ -33,19 +33,19 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: MyTheme.creamColor,
         body: SafeArea(
           child: Container(
-            padding: EdgeInsets.all(32),
+            padding: const EdgeInsets.all(32),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                ArticleListingHeader(),
-                SizedBox(height: 20),
+                const ArticleListingHeader(),
+                const SizedBox(height: 20),
                 if (ArticleModel.articles != null &&
                     ArticleModel.articles!.isNotEmpty)
-                  Expanded(
+                  const Expanded(
                     child: ArticleListing(),
                   )
                 else
-                  Expanded(
+                  const Expanded(
                     child: Center(
                       child: CircularProgressIndicator(),
                     ),
