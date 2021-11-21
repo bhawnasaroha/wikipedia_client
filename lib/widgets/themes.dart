@@ -8,7 +8,7 @@ class MyTheme {
           primaryColor,
         ),
         primaryColor: Colors.black,
-        fontFamily: GoogleFonts.righteous().fontFamily,
+        fontFamily: GoogleFonts.poppins().fontFamily,
         appBarTheme: AppBarTheme(
           color: Colors.white,
           elevation: 0,
