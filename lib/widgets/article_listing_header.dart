@@ -9,18 +9,19 @@ class ArticleListingHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+      children: const [
         Text(
           "Wikipedia",
           style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: MyTheme.darkBluish),
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+            // color: MyTheme.darkBluish,
+          ),
         ),
         Text(
           "Featured Articles",
           style: TextStyle(
-            fontSize: 20,
+            fontSize: 24,
           ),
         ),
       ],

@@ -7,7 +7,7 @@ class MyTheme {
         primarySwatch: CreateColor.createMaterialColor(
           primaryColor,
         ),
-        primaryColor: Colors.black,
+        primaryColor: primaryColor,
         fontFamily: GoogleFonts.poppins().fontFamily,
         appBarTheme: AppBarTheme(
           color: Colors.white,
@@ -24,5 +24,5 @@ class MyTheme {
   // Colors
   static Color primaryColor = Color(0xFF6B62FF);
   static Color creamColor = Color(0xFFf5f5f5);
-  static Color darkBluish = Color(0xFF403b58);
+  // static Color darkBluish = Color(0xFF403b58);
 }

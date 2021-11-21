@@ -6,7 +6,7 @@ class ArticleModel {
 
 class Article {
   final String title;
-  final String description;
+  final dynamic description;
   final String pubDate;
   final String link;
 
@@ -20,7 +20,7 @@ class Article {
   Article copyWith({
     int? id,
     String? title,
-    String? description,
+    dynamic? description,
     String? pubDate,
     String? link,
   }) {

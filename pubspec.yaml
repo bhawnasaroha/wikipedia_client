@@ -30,9 +30,12 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_html: ^2.1.5
   google_fonts: ^2.1.0
+  html: ^0.15.0
   http: ^0.13.4
   xml2json: ^5.3.1
+  flutter_widget_from_html_core: ^0.8.2
 
 dev_dependencies:
   flutter_lints: ^1.0.0

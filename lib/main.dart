@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'pages/article_details_page.dart';
 import 'pages/home_page.dart';
+// import 'utils/arguments.dart';
 import 'utils/routes.dart';
 import 'widgets/themes.dart';
 
@@ -22,8 +23,7 @@ class WikipediaClient extends StatelessWidget {
       routes: {
         "/": (BuildContext context) => const HomePage(),
         MyRoutes.homeRoute: (BuildContext context) => const HomePage(),
-        MyRoutes.articleDetail: (BuildContext context) =>
-            const ArticleDetailPage(),
+        MyRoutes.articleDetail: (BuildContext context) => ArticleDetailPage(),
       },
     );
   }
