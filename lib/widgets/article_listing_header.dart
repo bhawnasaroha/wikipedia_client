@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../widgets/themes.dart';
-
 class ArticleListingHeader extends StatelessWidget {
   const ArticleListingHeader({Key? key}) : super(key: key);
 
@@ -13,9 +11,8 @@ class ArticleListingHeader extends StatelessWidget {
         Text(
           "Wikipedia",
           style: TextStyle(
-            fontSize: 28,
+            fontSize: 32,
             fontWeight: FontWeight.bold,
-            // color: MyTheme.darkBluish,
           ),
         ),
         Text(

@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-import 'package:html/parser.dart' as htmlparser;
-import 'package:html/dom.dart' as dom;
-import 'package:flutter_html/flutter_html.dart';
-import 'package:wikipedia_client/utils/arguments.dart';
-// import 'package:wikipedia_client/utils/arguments.dart';
+
 import 'package:wikipedia_client/utils/routes.dart';
 import 'package:wikipedia_client/utils/url.dart';
 import 'package:wikipedia_client/utils/util_functions.dart';
-// import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 
 import '../models/article.dart';
-import '../widgets/themes.dart';
 
 class ArticleItem extends StatelessWidget {
   final Article article;
@@ -54,13 +48,12 @@ class ArticleItem extends StatelessWidget {
                 HtmlWidget(
                   articleDescription,
                   onTapUrl: (url) async {
-                    print(url);
                     await launchURL(article.link);
                     return true;
                   },
                   textStyle: TextStyle(fontSize: 18),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 10),
                 ButtonBar(
                   alignment: MainAxisAlignment.spaceBetween,
                   buttonPadding: EdgeInsets.zero,
@@ -80,10 +73,9 @@ class ArticleItem extends StatelessWidget {
                         ),
                       ),
                       style: ButtonStyle(
-                        // backgroundColor: MaterialStateProperty.all(
-                        //   MyTheme.darkBluish,
-                        // ),
-                        shape: MaterialStateProperty.all(StadiumBorder()),
+                        shape: MaterialStateProperty.all(
+                          StadiumBorder(),
+                        ),
                       ),
                     )
                   ],

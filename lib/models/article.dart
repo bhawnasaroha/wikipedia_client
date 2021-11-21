@@ -20,7 +20,7 @@ class Article {
   Article copyWith({
     int? id,
     String? title,
-    dynamic? description,
+    dynamic description,
     String? pubDate,
     String? link,
   }) {
