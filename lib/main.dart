@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'pages/article_details_page.dart';
 import 'pages/home_page.dart';
-// import 'utils/arguments.dart';
 import 'utils/routes.dart';
 import 'widgets/themes.dart';
 

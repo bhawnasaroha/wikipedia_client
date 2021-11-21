@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 
-import 'package:wikipedia_client/utils/routes.dart';
-import 'package:wikipedia_client/utils/url.dart';
-import 'package:wikipedia_client/utils/util_functions.dart';
+import '../utils/routes.dart';
+import '../utils/url.dart';
+import '../utils/util_functions.dart';
+import '../widgets/app_buttons.dart';
 
 import '../models/article.dart';
 
@@ -13,7 +14,6 @@ class ArticleItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // dom.Document htmlDocument = htmlparser.parse(article.description);
     int index = article.description.indexOf('<p');
     String articleDescription =
         article.description.substring(index, index + 450) + '...';
@@ -42,9 +42,6 @@ class ArticleItem extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 10),
-                // Html.fromDom(document: htmlDocument),
-                // Html(data: article.description),
-                // HtmlWidget(article.description),
                 HtmlWidget(
                   articleDescription,
                   onTapUrl: (url) async {
@@ -58,7 +55,8 @@ class ArticleItem extends StatelessWidget {
                   alignment: MainAxisAlignment.spaceBetween,
                   buttonPadding: EdgeInsets.zero,
                   children: [
-                    ElevatedButton(
+                    AppButtons.primaryButton(
+                      buttonText: "Read more",
                       onPressed: () async {
                         await Navigator.pushNamed(
                           context,
@@ -66,18 +64,7 @@ class ArticleItem extends StatelessWidget {
                           arguments: article,
                         );
                       },
-                      child: Text(
-                        "Read more",
-                        style: TextStyle(
-                          fontSize: 14,
-                        ),
-                      ),
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all(
-                          StadiumBorder(),
-                        ),
-                      ),
-                    )
+                    ),
                   ],
                 ),
               ],

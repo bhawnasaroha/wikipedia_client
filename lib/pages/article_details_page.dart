@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
 
-import 'package:wikipedia_client/models/article.dart';
-import 'package:wikipedia_client/utils/url.dart';
-import 'package:wikipedia_client/utils/util_functions.dart';
+import '../models/article.dart';
+import '../utils/url.dart';
+import '../utils/util_functions.dart';
+import '../widgets/app_buttons.dart';
 
 import '../widgets/themes.dart';
 
@@ -15,26 +16,10 @@ class ArticleDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Object? args = ModalRoute.of(context)!.settings.arguments;
     Article article = args as Article;
-
     String articleDescription = UtilFunctions.fixImageUrl(article.description);
+    String fullArticleUrl =
+        UtilFunctions.findFullArticleLink(article.description, article.link);
 
-    int indexOfFull = articleDescription.indexOf('Full');
-    String fullArticleUrl = article.link;
-    if (indexOfFull > 0) {
-      String descriptionFullUrlSearchSet =
-          articleDescription.substring(0, indexOfFull);
-      int indexOfHref = descriptionFullUrlSearchSet.lastIndexOf('href');
-      String fullArticleUrlSearchSet = descriptionFullUrlSearchSet.substring(
-          indexOfHref, descriptionFullUrlSearchSet.length);
-      fullArticleUrl = "https://en.wikipedia.org" +
-          fullArticleUrlSearchSet.substring(
-            fullArticleUrlSearchSet.indexOf('"') + 1,
-            fullArticleUrlSearchSet.indexOf(
-              '"',
-              fullArticleUrlSearchSet.indexOf('"') + 1,
-            ),
-          );
-    }
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
       body: SafeArea(
@@ -44,9 +29,12 @@ class ArticleDetailPage extends StatelessWidget {
             children: [
               Container(
                 margin: EdgeInsets.only(top: 10),
-                padding: EdgeInsets.only(left: 10),
+                padding: EdgeInsets.only(left: 8),
                 child: IconButton(
-                  icon: Icon(Icons.arrow_back_ios_new),
+                  icon: Icon(
+                    Icons.arrow_back_ios_new,
+                    size: 20,
+                  ),
                   onPressed: () {
                     Navigator.pop(context);
                   },
@@ -65,14 +53,11 @@ class ArticleDetailPage extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 20),
-                      ElevatedButton(
+                      AppButtons.primaryButton(
+                        buttonText: "Full article",
                         onPressed: () async {
                           await launchURL(fullArticleUrl);
                         },
-                        child: Text("Full article"),
-                        style: ButtonStyle(
-                          shape: MaterialStateProperty.all(StadiumBorder()),
-                        ),
                       ),
                       SizedBox(height: 20),
                       HtmlWidget(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wikipedia_client/networking/fetch_articles.dart';
+import '../networking/fetch_articles.dart';
 
 import '../widgets/article_listing.dart';
 import '../widgets/article_listing_header.dart';
