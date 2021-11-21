@@ -6,6 +6,7 @@ import 'package:html/dom.dart' as dom;
 
 import 'package:wikipedia_client/models/article.dart';
 import 'package:wikipedia_client/utils/arguments.dart';
+import 'package:wikipedia_client/utils/url.dart';
 // / import 'package:wikipedia_client/utils/arguments.dart';
 
 import '../widgets/themes.dart';
@@ -48,6 +49,17 @@ class ArticleDetailPage extends StatelessWidget {
                         article.title,
                         style: TextStyle(
                           fontSize: 30,
+                        ),
+                      ),
+                      Center(
+                        child: ElevatedButton(
+                          onPressed: () async {
+                            await launchURL(article.link);
+                          },
+                          child: Text("Full Article"),
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all(StadiumBorder()),
+                          ),
                         ),
                       ),
                       HtmlWidget(
