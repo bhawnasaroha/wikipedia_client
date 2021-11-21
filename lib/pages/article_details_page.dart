@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 // import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_widget_from_html_core/flutter_widget_from_html_core.dart';
-import 'package:html/parser.dart' as htmlparser;
-import 'package:html/dom.dart' as dom;
+// import 'package:html/parser.dart' as htmlparser;
+// import 'package:html/dom.dart' as dom;
 
 import 'package:wikipedia_client/models/article.dart';
 // import 'package:wikipedia_client/utils/arguments.dart';
 import 'package:wikipedia_client/utils/url.dart';
+import 'package:wikipedia_client/utils/util_functions.dart';
 // / import 'package:wikipedia_client/utils/arguments.dart';
 
 import '../widgets/themes.dart';
@@ -19,17 +20,8 @@ class ArticleDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final Object? args = ModalRoute.of(context)!.settings.arguments;
     Article article = args as Article;
-    // print(article);
-    dom.Document htmlDocument = htmlparser.parse(article.description);
-    String articleDescription = article.description;
-    String br = "<br>";
-    String imageUrlPrefix = "https://upload";
-    String imageUrlPrefixToChange = "//upload";
-    articleDescription = articleDescription.replaceAll("\\n", br);
-    articleDescription = articleDescription.replaceAll("\\", "");
-    articleDescription =
-        articleDescription.replaceAll(imageUrlPrefixToChange, imageUrlPrefix);
-    // print(articleDescription);
+
+    String articleDescription = UtilFunctions.fixImageUrl(article.description);
 
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
