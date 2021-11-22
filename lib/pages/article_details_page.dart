@@ -52,14 +52,13 @@ class ArticleDetailPage extends StatelessWidget {
                           fontSize: 30,
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 10),
                       AppButtons.primaryButton(
                         buttonText: "Full article",
                         onPressed: () async {
                           await launchURL(fullArticleUrl);
                         },
                       ),
-                      const SizedBox(height: 20),
                       HtmlWidget(
                         articleDescription,
                         onTapUrl: (url) async {
