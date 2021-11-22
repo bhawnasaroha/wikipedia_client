@@ -66,6 +66,19 @@ class ArticleDetailPage extends StatelessWidget {
                           return true;
                         },
                         textStyle: const TextStyle(fontSize: 18),
+                        customStylesBuilder: (element) {
+                          if (element.localName == "img") {
+                            return {'width': '100%'};
+                          }
+                          if (element.classes.contains('tfa-footer') ||
+                              element.classes.contains('tfa-recent')) {
+                            return {'text-align': 'left'};
+                          }
+                          if (element.localName == "li") {
+                            return {'text-align': 'left'};
+                          }
+                          return null;
+                        },
                       ),
                     ],
                   ),

@@ -7,14 +7,14 @@ import 'dart:convert';
 import 'dart:async';
 
 class ApiProvider {
-  final String _baseUrl =
+  final String _url =
       "https://en.wikipedia.org/w/api.php?action=featuredfeed&format=json&feed=featured";
 
   Future<dynamic> get() async {
     dynamic responseJson;
     try {
       final xml2json = Xml2Json();
-      http.Response response = await http.get(Uri.parse(_baseUrl));
+      http.Response response = await http.get(Uri.parse(_url));
       var xmlResponse = response.body;
       xml2json.parse(xmlResponse);
       var jsonArticles = xml2json.toParker();
